@@ -22,6 +22,15 @@ app.get("/", function(req, res){
     });
 });
 
+app.get("/posts/:id", function(req, res){
+    posts.forEach(function(post){
+        if(post.title === req.params.id){
+            console.log("Match found!");
+            }
+        });
+    });
+    
+
 app.get("/about", function(req, res){
     res.render("about", {
         aboutContent: aboutContent
